@@ -8,3 +8,4 @@ simple CLI tic tac toe game
     - beautify CLI-outputs by clearing terminal after each output and reprinting the tictactoe field
 - write tests
 - add CI with Dockerfile
+- add UI with Qt
