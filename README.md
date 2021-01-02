@@ -1,4 +1,4 @@
-# TicTacToe
+# tic-tac-toe
 simple CLI tic tac toe game
 
 ##  to-dos
