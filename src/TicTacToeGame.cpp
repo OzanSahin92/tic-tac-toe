@@ -22,7 +22,7 @@ bool TicTacToeGame::isPlayerOne() const {
 }
 
 const bool TicTacToeGame::isPosValid(const int &row, const int &column) {
-    if (((row < 0) || (row > 2)) && ((column < 0) || (column > 2))) {
+    if (((row < 0) || (row > 2)) || ((column < 0) || (column > 2))) {
         return false;
     }
     return true;

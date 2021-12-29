@@ -12,8 +12,8 @@ TicTacToeField::TicTacToeField() : _field({{0, 0, 0},
                                            {0, 0, 0}}) {}
 
 void TicTacToeField::displayField() {
-    for (auto &row : _field) {
-        for (auto &element : row) {
+    for (auto &row: _field) {
+        for (auto &element: row) {
             cout << element << "\t";
         }
         cout << endl;
@@ -26,58 +26,26 @@ void TicTacToeField::changeFieldValue(const int &row, const int &column, const i
 
 bool TicTacToeField::checkFieldForWinner() {
     // check rows
-    int sum = 0;
-    for (auto &row : _field) {
-        for (auto &element : row) {
-            sum += element;
-        }
-        if (sum == 3) {
-            return true;
-        }
-        else if (sum == 6) {
+    for (int i = 0; i < 3; i++) {
+        if ((_field[i][0] == _field[i][1] == _field[i][2]) && (_field[i][0] != 0) && (_field[i][1] != 0) &&
+            (_field[i][2] != 0)) {
             return true;
         }
     }
     // check columns
-    sum = 0;
     for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            sum += _field[j][i];
-        }
-        if (sum == 3) {
-            return true;
-        }
-        else if (sum == 6) {
+        if ((_field[0][i] == _field[1][i] == _field[2][i]) && (_field[0][i] != 0) && (_field[1][i] != 0) &&
+            (_field[2][i] != 0)) {
             return true;
         }
     }
     // check diagonals
-    sum = 0;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (i == j) {
-                sum += _field[i][j];;
-            }
-        }
-    }
-    if (sum == 3) {
+    if ((_field[0][0] == _field[1][1] == _field[2][2]) && (_field[0][0] != 0) && (_field[1][1] != 0) &&
+        (_field[2][2] != 0)) {
         return true;
     }
-    else if (sum == 6) {
-        return true;
-    }
-    sum = 0;
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            if (i + j == 2) {
-                sum += _field[i][j];;
-            }
-        }
-    }
-    if (sum == 3) {
-        return true;
-    }
-    else if (sum == 6) {
+    if ((_field[0][2] == _field[1][1] == _field[2][0]) && (_field[0][2] != 0) && (_field[1][1] != 0) &&
+        (_field[2][0] != 0)) {
         return true;
     }
 
