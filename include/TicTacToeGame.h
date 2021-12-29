@@ -12,12 +12,15 @@ class TicTacToeGame {
 public:
     TicTacToeGame();
 
-    void play (const int &row, const int &column);
+    void play(const int &row, const int &column);
 
     bool isPlayerOne() const;
 
-    virtual ~TicTacToeGame();
+    const bool isPosValid(const int &row, const int &column);
 
+    bool isGameFinished();
+
+    virtual ~TicTacToeGame();
 
 private:
     TicTacToeField _field;

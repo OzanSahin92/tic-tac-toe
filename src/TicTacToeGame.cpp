@@ -2,7 +2,7 @@
 // Created by mrerzincan on 01.01.21.
 //
 
-#include "../include/TicTacToeGame.h"
+#include "TicTacToeGame.h"
 
 TicTacToeGame::TicTacToeGame() : _field(), _playerOne(true) {}
 
@@ -19,6 +19,17 @@ void TicTacToeGame::play(const int &row, const int &column) {
 
 bool TicTacToeGame::isPlayerOne() const {
     return _playerOne;
+}
+
+const bool TicTacToeGame::isPosValid(const int &row, const int &column) {
+    if (((row < 0) || (row > 2)) && ((column < 0) || (column > 2))) {
+        return false;
+    }
+    return true;
+}
+
+bool TicTacToeGame::isGameFinished() {
+    return _field.checkFieldForWinner();
 }
 
 TicTacToeGame::~TicTacToeGame() = default;

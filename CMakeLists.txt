@@ -3,4 +3,8 @@ project(TicTacToe)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(TicTacToe main.cpp src/TicTacToeField.cpp include/TicTacToeField.h src/TicTacToeGame.cpp include/TicTacToeGame.h)
+include_directories(include/)
+
+file(GLOB SrcFiles src/*.cpp )
+
+add_executable(TicTacToe ${SrcFiles})

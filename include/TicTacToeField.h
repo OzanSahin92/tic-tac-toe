@@ -16,6 +16,8 @@ public:
 
     void changeFieldValue(const int &row, const int &column, const int &value);
 
+    bool checkFieldForWinner();
+
     virtual ~TicTacToeField();
 
 private:
