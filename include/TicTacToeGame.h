@@ -12,6 +12,8 @@ class TicTacToeGame {
 public:
     TicTacToeGame();
 
+    void startGame();
+
     void play(const int &row, const int &column);
 
     bool isPlayerOne() const;
